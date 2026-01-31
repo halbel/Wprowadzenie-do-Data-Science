@@ -21,12 +21,6 @@ Dane są wczytywane z plików CSV z separatorem ';'.
 - Python 3.8+
 - Biblioteka standardowa ('scv')
 
-? ## Struktura danych
-- `labels` – lista nazw kolumn (pierwszy wiersz pliku)
-- `data` – lista wierszy danych
-
-
-
 ## Użycie
 ```python
 from Dataset import Dataset
@@ -37,6 +31,6 @@ ds.print_labels()
 ds.print_data(0, 3)    
 train, test, val = ds.split(35, 35, 30)
 print(len(train), len(test), len(val))
-ds.class_count(3)
-ds.print_class_data("yes")
+ds.class_count(-1)
+ds.print_class_data("13")
 ds.save_do_csv(ds.data, "saved.csv")

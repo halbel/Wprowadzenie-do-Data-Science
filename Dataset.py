@@ -45,8 +45,7 @@ class Dataset:
         val_data = self.data[test_end:]
 
         return train_data, test_data, val_data
-
-
+    
     def class_count(self,col_index):
         counts={}
         for row in self.data:
@@ -54,13 +53,15 @@ class Dataset:
             counts[key] = counts.get(key,0)+1
         for k,v in counts.items():
             print((k,v))
+
     def print_class_data(self,class_unit,decision_column =-1):
         found = [w for w in self.data if w[decision_column] == class_unit]
         if found:
             for row in found:
                 print(row)
-            else:
-                print(f"Not found data for class:{class_unit}")
+        else:
+            print(f"Not found data for class:{class_unit}")
+
     def save_do_csv(self, data_list, file_name):
         try:
             with open(file_name, mode='w', newline='', encoding='utf-8') as plik:
@@ -78,8 +79,6 @@ ds.print_labels()
 ds.print_data(0, 3)    
 train, test, val = ds.split(35, 35, 30)
 print(len(train), len(test), len(val))
-ds.class_count(3)
-ds.print_class_data("yes")
+ds.class_count(-1)
+ds.print_class_data("13")
 ds.save_do_csv(ds.data, "saved.csv")
-
-
