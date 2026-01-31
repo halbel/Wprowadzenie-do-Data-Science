@@ -73,12 +73,15 @@ class Dataset:
         except Exception as e:
             print(f"An error occured: {e}")
 
-ds = Dataset()
-ds.load("student-mat.csv", header=True)
-ds.print_labels()
-ds.print_data(0, 3)    
-train, test, val = ds.split(35, 35, 30)
-print(len(train), len(test), len(val))
-ds.class_count(-1)
-ds.print_class_data("13")
-ds.save_do_csv(ds.data, "saved.csv")
+
+if __name__ == "__main__":
+
+    ds = Dataset()
+    ds.load("student-mat.csv", header=True)
+    ds.print_labels()
+    ds.print_data()    
+    train, test, val = ds.split(35, 35, 30)
+    print(len(train), len(test), len(val))
+    ds.class_count(-1)
+    ds.print_class_data("13")
+    ds.save_do_csv(ds.data, "saved.csv")
