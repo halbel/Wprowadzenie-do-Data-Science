@@ -29,7 +29,7 @@ Dane są wczytywane z plików CSV z separatorem ';'.
 
 ## Użycie
 ```python
-from dataset import Dataset
+from Dataset import Dataset
 
 ds = Dataset()
 ds.load("student-mat.csv", header=True)
