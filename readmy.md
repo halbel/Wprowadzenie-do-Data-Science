@@ -33,6 +33,10 @@ from dataset import Dataset
 
 ds = Dataset()
 ds.load("student-mat.csv", header=True)
-
-print(ds.labels)
-print(len(ds.data))
+ds.print_labels()
+ds.print_data(0, 3)    
+train, test, val = ds.split(35, 35, 30)
+print(len(train), len(test), len(val))
+ds.class_count(3)
+ds.print_class_data("yes")
+ds.save_do_csv(ds.data, "saved.csv")
