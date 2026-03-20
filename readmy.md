@@ -19,7 +19,7 @@ Dane są wczytywane z plików CSV z separatorem ';'.
 
 ## Wymagania
 - Python 3.8+
-- Biblioteka standardowa ('scv')
+- Biblioteka standardowa ('csv')
 
 ## Użycie
 ```python
